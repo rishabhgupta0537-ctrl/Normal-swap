@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6d5dfc">
+<meta name="description" content="SkillSwap is a friendly community to teach what you know and learn something new.">
+<title>SkillSwap — Share Skills. Grow Together.</title>
+<style>
+:root{--purple:#6d5dfc;--purple-dark:#5546e8;--ink:#211d3b;--muted:#716d86;--bg:#faf9ff;--line:#eeebf7;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:25px;font-weight:850;letter-spacing:-1.2px}.brand span{color:var(--purple)}.links{display:flex;gap:26px;align-items:center;color:#5f5a75;font-size:14px}.links a:hover{color:var(--purple)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:13px;padding:13px 19px;background:var(--purple);color:white;font-weight:750;cursor:pointer;box-shadow:0 8px 20px #6d5dfc26;transition:.2s}.btn:hover{background:var(--purple-dark);transform:translateY(-1px)}.btn.light{background:#efedff;color:#5546df;box-shadow:none}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;padding:66px 0 86px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#efedff;color:#5d50e7;padding:8px 13px;border-radius:30px;font-size:11px;font-weight:850;letter-spacing:1px}.dot{width:7px;height:7px;border-radius:50%;background:#7b6cff}
+h1{font-size:clamp(43px,6vw,70px);line-height:1.04;letter-spacing:-3.4px;margin:21px 0 18px}h1 em{font-style:normal;color:var(--purple)}.lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:540px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.tiny-note{font-size:12px;color:#9690a8;margin-top:17px}
+.hero-art{position:relative;min-height:390px;border-radius:32px;background:radial-gradient(circle at 80% 15%,#fff 0 10%,transparent 34%),linear-gradient(145deg,#eae7ff,#f5eaff);padding:26px;display:flex;flex-direction:column;justify-content:center;gap:14px;overflow:hidden}.float{position:absolute;border-radius:50%;background:#ffffff65}.float.one{width:120px;height:120px;right:-25px;top:-28px}.float.two{width:65px;height:65px;left:-20px;bottom:20px}
+.skill-row{position:relative;z-index:1;display:flex;align-items:center;gap:13px;background:#fff;padding:16px;border:1px solid #ffffff;border-radius:18px;box-shadow:0 12px 32px #493b8710}.emoji{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#f1efff;font-size:24px;flex:none}.skill-row strong{display:block;font-size:14px}.skill-row small{display:block;color:#88829c;margin-top:4px;font-size:12px}.chip{margin-left:auto;border-radius:20px;padding:7px 9px;background:#f0eeff;color:#5c4ee6;font-size:10px;font-weight:850;letter-spacing:.5px}
+.trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0}.trust-inner{display:flex;justify-content:center;gap:38px;flex-wrap:wrap;color:#77718b;font-size:13px}.trust b{color:#403b5b}
+section{padding:76px 0}.section-head{text-align:center;max-width:620px;margin:0 auto 34px}.kicker{color:var(--purple);font-size:11px;font-weight:850;letter-spacing:1.3px}.section-head h2{font-size:clamp(29px,4vw,40px);letter-spacing:-1.5px;margin:10px 0}.section-head p{color:var(--muted);line-height:1.65;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid var(--line);border-radius:21px;padding:24px;box-shadow:0 8px 26px #30245d06}.card .emoji{margin-bottom:17px}.card h3{font-size:17px;margin:0 0 8px}.card p{font-size:14px;line-height:1.65;color:var(--muted);margin:0}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.category{background:#fff;border:1px solid var(--line);padding:17px;border-radius:16px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:11px}.category span{font-size:21px}
+.join-section{background:linear-gradient(180deg,#f4f1ff,#faf9ff);border-top:1px solid #eeebff;border-bottom:1px solid #eeebff}.join-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:start}.join-copy h2{font-size:40px;line-height:1.12;letter-spacing:-1.8px;margin:12px 0}.join-copy p{color:var(--muted);line-height:1.7}.join-points{padding:0;list-style:none;color:#5d5874;font-size:14px;line-height:2.1}.join-points li:before{content:"✓";color:var(--purple);font-weight:900;margin-right:10px}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:23px;padding:27px;box-shadow:0 18px 45px #44358b0d}.form-card h3{font-size:21px;margin:0 0 6px}.form-card>p{color:var(--muted);font-size:13px;margin:0 0 22px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}.field.full{grid-column:1/-1}label{font-size:12px;font-weight:750;color:#4f4967}input,select,textarea{width:100%;border:1px solid #e7e3f2;border-radius:11px;padding:12px 13px;background:#fff;color:var(--ink);outline:none}input:focus,select:focus,textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px #6d5dfc18}textarea{resize:vertical;min-height:85px}.form-card .btn{width:100%;margin-top:4px}.privacy{font-size:11px;color:#918ba2;line-height:1.5;margin-top:12px}
+.faq-grid{max-width:780px;margin:auto;display:grid;gap:12px}details{background:#fff;border:1px solid var(--line);border-radius:15px;padding:17px 19px}summary{font-weight:750;cursor:pointer;font-size:14px}details p{color:var(--muted);font-size:13px;line-height:1.6;margin-bottom:0}
+.cta{margin:5px auto 75px;text-align:center;background:#241e4d;color:#fff;border-radius:25px;padding:43px 25px}.cta h2{font-size:34px;margin:0 0 9px;letter-spacing:-1px}.cta p{color:#d1cde6;margin:0 0 21px}.footer{border-top:1px solid var(--line);padding:25px 0;color:#89839b;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.footer strong{color:#494360}
+@media(max-width:760px){.wrap{width:min(100% - 30px,560px)}.nav{height:68px}.links a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr;gap:30px;padding:43px 0 55px}h1{letter-spacing:-2.2px}.hero-art{min-height:300px;padding:18px}.trust-inner{gap:13px 22px}.trust-inner span{font-size:12px}section{padding:58px 0}.cards{grid-template-columns:1fr}.category-grid{grid-template-columns:1fr 1fr}.join-grid{grid-template-columns:1fr;gap:25px}.join-copy h2{font-size:34px}.form-card{padding:21px}.field-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.cta{margin-bottom:45px;padding:34px 18px}.cta h2{font-size:28px}.footer-inner{flex-direction:column}}
+@media(max-width:380px){.category-grid{grid-template-columns:1fr}.chip{display:none}}
+</style>
+</head>
+<body>
+<header class="wrap nav">
+  <a class="brand" href="#home">Skill<span>Swap</span></a>
+  <nav class="links" aria-label="Main navigation">
+    <a href="#how">How it works</a><a href="#explore">Explore skills</a><a href="#faq">FAQ</a>
+    <a class="btn nav-cta" href="#join">Join free</a>
+  </nav>
+</header>
+<main id="home">
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow"><span class="dot"></span> LEARN TOGETHER · GROW TOGETHER</span>
+      <h1>Share what you know.<br>Learn what you <em>love.</em></h1>
+      <p class="lead">Everyone has something worth teaching. Find people to exchange skills with, learn at your own pace, and grow together — without course fees.</p>
+      <div class="hero-actions"><a class="btn" href="#join">Join the community</a><a class="btn light" href="#how">How it works</a></div>
+      <p class="tiny-note">Free to join · Built around sharing · Open to curious learners</p>
+    </div>
+    <div class="hero-art" aria-label="Examples of skills people can exchange">
+      <span class="float one"></span><span class="float two"></span>
+      <div class="skill-row"><span class="emoji">🎨</span><div><strong>Graphic design</strong><small>Learn creative skills</small></div><span class="chip">LEARN</span></div>
+      <div class="skill-row"><span class="emoji">💻</span><div><strong>Web development</strong><small>Share what you know</small></div><span class="chip">TEACH</span></div>
+      <div class="skill-row"><span class="emoji">🌍</span><div><strong>Language practice</strong><small>Grow through conversation</small></div><span class="chip">SWAP</span></div>
+    </div>
+  </div>
+  <div class="trust"><div class="wrap trust-inner"><span>✨ <b>Learn by doing</b></span><span>🤝 <b>Give and take</b></span><span>🌱 <b>Grow together</b></span><span>💜 <b>Community first</b></span></div></div>
+
+  <section id="how" class="wrap">
+    <div class="section-head"><span class="kicker">HOW IT WORKS</span><h2>Skill sharing, made simple</h2><p>No complicated courses. Just people helping people learn something new.</p></div>
+    <div class="cards">
+      <article class="card"><span class="emoji">🙋</span><h3>1. Share your skills</h3><p>Tell the community what you can teach and what you are curious to learn.</p></article>
+      <article class="card"><span class="emoji">🔎</span><h3>2. Find common ground</h3><p>Explore skills and look for people whose interests complement yours.</p></article>
+      <article class="card"><span class="emoji">🤝</span><h3>3. Start an exchange</h3><p>Connect respectfully, agree on a simple plan, and learn from each other.</p></article>
+    </div>
+  </section>
+
+  <section id="explore" class="wrap" style="padding-top:8px">
+    <div class="section-head"><span class="kicker">EXPLORE POSSIBILITIES</span><h2>What would you like to learn?</h2><p>Bring a skill, find a new interest, and start with a conversation.</p></div>
+    <div class="category-grid">
+      <div class="category"><span>💻</span> Coding & technology</div><div class="category"><span>🎨</span> Art & design</div>
+      <div class="category"><span>🗣️</span> Languages</div><div class="category"><span>📸</span> Photography</div>
+      <div class="category"><span>🎸</span> Music</div><div class="category"><span>✍️</span> Writing</div>
+      <div class="category"><span>📈</span> Business</div><div class="category"><span>🎬</span> Video editing</div>
+    </div>
+  </section>
+
+  <section id="join" class="join-section">
+    <div class="wrap join-grid">
+      <div class="join-copy"><span class="kicker">JOIN SKILLSWAP</span><h2>Your next skill could start with one hello.</h2><p>Tell us a little about what you can share and what you hope to learn. We'll use your details to follow up about the community.</p>
+        <ul class="join-points"><li>Share skills you already have</li><li>Discover something new to learn</li><li>Help build a respectful learning community</li></ul>
+      </div>
+      <div class="form-card">
+        <h3>Join the community</h3><p>Fill in the form and send your interest.</p>
+        <form name="skillswap-join" method="POST" data-netlify="true" action="/success.html">
+          <input type="hidden" name="form-name" value="skillswap-join">
+          <div class="field-grid">
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required></div>
+            <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+            <div class="field"><label for="teach">I can teach</label><input id="teach" name="can-teach" type="text" placeholder="e.g. drawing, coding" required></div>
+            <div class="field"><label for="learn">I want to learn</label><input id="learn" name="want-to-learn" type="text" placeholder="e.g. English, design" required></div>
+            <div class="field full"><label for="message">Anything else? (optional)</label><textarea id="message" name="message" placeholder="Tell us a little more..."></textarea></div>
+          </div>
+          <button class="btn" type="submit">Send my interest →</button>
+          <p class="privacy">Your details are submitted to the website owner for follow-up. Don't include passwords, home addresses, or other sensitive information.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <div class="section-head"><span class="kicker">GOOD TO KNOW</span><h2>Frequently asked questions</h2><p>A few quick answers before you get started.</p></div>
+    <div class="faq-grid">
+      <details><summary>Is SkillSwap free?</summary><p>SkillSwap is designed around free skill exchange. Members share knowledge rather than paying for lessons.</p></details>
+      <details><summary>Do I need to be an expert to teach?</summary><p>No. Share skills you are comfortable helping someone practise. Be honest about your experience.</p></details>
+      <details><summary>How does an exchange work?</summary><p>Start by finding a shared interest, then agree on a suitable topic, schedule, and way to learn together.</p></details>
+      <details><summary>Is my information public?</summary><p>The join form sends your submission to the site owner. Do not submit sensitive personal information. Any public member directory would need to be built separately.</p></details>
+    </div>
+  </section>
+  <div class="wrap"><div class="cta"><h2>Have a skill to share?</h2><p>Someone out there may be hoping to learn exactly that.</p><a class="btn" href="#join">Join SkillSwap</a></div></div>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><span><strong>SkillSwap</strong> · Share skills. Grow together.</span><span>Made for curious minds · © 2026 SkillSwap</span></div></footer>
+</body></html>
